@@ -1,4 +1,4 @@
-# 📋 CodeClipboard — Smart Temporary Clipboard for VS Code  
+# CodeClipboard — Smart Temporary Clipboard for VS Code  
 ### Save selected snippets instantly. No scrolling. No losing track.
 
 **CodeClipboard** is a lightweight, fast, and smart temporary clipboard panel for VS Code.  
