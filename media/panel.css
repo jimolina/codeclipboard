@@ -57,3 +57,11 @@ button#clear:hover{
 #notes li:last-child {
     border-bottom: none;
 }
+
+pre {
+    white-space: pre-wrap;
+    background: #1e1e1e;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+}

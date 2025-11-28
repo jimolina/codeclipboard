@@ -6,9 +6,21 @@ const clearBtn = document.getElementById("clear");
 
 // Listen to messages from the host extension.
 window.addEventListener("message", event => {
-    const message = event.data;
-    if (message.type === "update") {
-        notesUl.innerHTML = message.notes.map(n => `<li>${n}</li>`).join("");
+    const { type, notes } = event.data;
+
+    if (type === "update") {
+        notesUl.innerHTML = ""; // Clean list
+
+        notes.forEach(note => {
+            const li = document.createElement("li");
+
+            // Display code without interpreting it
+            const pre = document.createElement("pre");
+            pre.textContent = note;
+
+            li.appendChild(pre);
+            notesUl.appendChild(li);
+        });
     }
 });
 
