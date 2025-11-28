@@ -1,0 +1,60 @@
+{
+  "name": "code-clipboard",
+  "displayName": "CodeClipboard",
+  "description": "Smart Clipboard for VSCode: temporarily save text snippets in a side panel for copying/pasting without scrolling.",
+  "version": "0.0.1",
+  "publisher": "Jose Molina",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimolina/codeclipboard"
+  },
+  "homepage": "https://codeclipboard.com",
+  "bugs": {
+    "url": "https://github.com/jimolina/codeclipboard/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeClipboard.addNote",
+        "title": "CodeClipboard: Add Selected Text"
+      },
+      {
+        "command": "codeClipboard.showPanel",
+        "title": "CodeClipboard: Show Notes Panel"
+      },
+      {
+        "command": "codeClipboard.clearNotes",
+        "title": "CodeClipboard: Clear Notes"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codeClipboard.showPanel",
+          "group": "codeClipboard"
+        },
+        {
+          "command": "codeClipboard.addNote",
+          "when": "editorHasSelection",
+          "group": "codeClipboard"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^18.0.0"
+  }
+}
