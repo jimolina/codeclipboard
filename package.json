@@ -2,7 +2,7 @@
   "name": "code-clipboard",
   "displayName": "CodeClipboard",
   "description": "Smart Clipboard for VSCode: temporarily save text snippets in a side panel for copying/pasting without scrolling.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "JoseMolina",
   "repository": {
     "type": "git",

@@ -6,16 +6,27 @@ export function activate(context: vscode.ExtensionContext) {
     // Temporary storage in memory.
     const notes: string[] = [];
 
+    // Escape HTML before storing
+    const escapeHtml = (text: string): string =>
+    text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
     // Record command: add note.
     const addNoteCmd = vscode.commands.registerCommand('codeClipboard.addNote', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
 
-        const selection = editor.document.getText(editor.selection).trim();
-        if (!selection) {
+        const rawSelection = editor.document.getText(editor.selection).trim();
+        if (!rawSelection) {
             vscode.window.showInformationMessage("No text selected.");
             return;
         }
+
+        const selection = rawSelection;
 
         notes.push(selection);
         vscode.window.showInformationMessage(`Added to CodeClipboard: "${selection}"`);
