@@ -35,7 +35,7 @@ The panel uses its own icon for a polished look.
 
 ## 🖼️ Screenshots
 
-> Replace these with your actual screenshots once you capture them inside VS Code.
+https://github.com/user-attachments/assets/a39b505a-25f3-444e-98b5-6ac829953f2d
 
 | Adding selected text | Notes Panel |
 |----------------------|-------------|
